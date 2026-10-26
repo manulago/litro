@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f3ef" />
+  <meta name="description" content="Encuentra el combustible que te conviene. Precios, distancia y ahorro real." />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>litro — Encuentra tu mejor ruta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><a class="brand" href="#" aria-label="litro inicio"><span class="brand-mark">l.</span><span>litro</span></a><div class="top-right"><span class="live-dot"></span><span id="updated">Precios oficiales</span><button class="icon-button" id="refresh" aria-label="Actualizar precios" title="Actualizar">↻</button></div></header>
+    <main>
+      <section class="hero"><div class="eyebrow"><span>01 / TU ZONA</span><span class="eyebrow-line"></span><span>ESPAÑA</span></div><div class="hero-copy"><div><h1>Más en el depósito.<br/><em>Aún más en tu bolsillo.</em></h1><p>Comparamos precios y distancia para encontrar la parada que realmente te compensa.</p></div><div class="hero-side"><span class="hero-number">01</span><span>PRECIO<br/>+ DISTANCIA<br/>+ CONSUMO</span></div></div>
+        <div class="search-panel"><div class="location-wrap"><span class="pin">⌖</span><div class="location-text"><label for="location">BUSCAR CERCA DE</label><input id="location" type="text" placeholder="Tu ciudad o código postal" autocomplete="postal-code"/><span id="locationStatus" class="location-status">Activa tu ubicación o escribe una ciudad</span></div><button class="locate" id="locate" aria-label="Usar mi ubicación" title="Usar mi ubicación">◎</button></div><button class="search-btn" id="search">Buscar gasolineras <span>↗</span></button></div>
+        <div class="quick-tags"><span>COMBUSTIBLE</span><button class="tag active" data-fuel="gasolina">Gasolina 95</button><button class="tag" data-fuel="diesel">Diésel</button><span class="tag-sep"></span><span id="resultCount">— estaciones</span></div>
+      </section>
+      <section class="results-section"><div class="section-head"><div><span class="eyebrow-label">CERCA DE TI</span><h2>Una parada inteligente.</h2></div><button class="sort" id="sort">Ordenar: <b>Más conveniente</b>⌄</button></div>
+        <div class="map-card"><div class="map-heading"><span class="eyebrow-label">MAPA Y RUTA</span><span id="mapHint">Activa tu ubicación para ver las estaciones cercanas</span></div><div id="map" aria-label="Mapa de gasolineras"></div><div class="map-legend"><span><i class="legend-dot user-dot"></i>Tu ubicación</span><span><i class="legend-dot station-dot"></i>Gasolineras</span><span><i class="legend-line"></i>Ruta en coche</span></div></div>
+        <div class="content-grid"><div class="station-list" id="stations"><div class="loading"><span class="spinner"></span><span>Buscando precios oficiales…</span></div></div>
+          <aside class="sidebar"><div class="calculator"><div class="card-top"><span class="eyebrow-label">TU COCHE</span><span class="card-icon">↗</span></div><h3>¿Cuánto te<br/>cuesta el viaje?</h3><p class="calc-intro">Calculamos si el ahorro en combustible cubre el trayecto de ida y vuelta.</p><label class="field-label" for="consumption">CONSUMO MEDIO <span>litros / 100 km</span></label><div class="input-shell"><input id="consumption" type="number" min="1" max="40" step="0.1" value="6.5"/><span>L / 100 KM</span></div><div class="calc-note"><span class="info">i</span> Ajusta el consumo para calcular el ahorro real.</div><div class="calc-rule"></div><div class="calc-result"><span>ESTIMACIÓN DE AHORRO</span><strong id="saving">—</strong></div></div>
+          <div class="tip"><span class="tip-icon">✳</span><div><b>Un dato útil</b><p>Los precios se actualizan desde el Geoportal oficial del Ministerio para la Transición Ecológica.</p></div></div></aside></div>
+        <div class="disclaimer"><span>FUENTE</span> Geoportal de Gasolineras · Ministerio para la Transición Ecológica <span class="disclaimer-sep">/</span> Precios sujetos a cambios</div>
+      </section>
+    </main><footer><span>litro<span class="footer-dot">.</span></span><span>HECHO PARA CONDUCIR MEJOR</span><span>© 2026</span></footer>
+  </div><div id="toast" role="status" aria-live="polite"></div><script src="/app.js"></script>
+</body></html>
